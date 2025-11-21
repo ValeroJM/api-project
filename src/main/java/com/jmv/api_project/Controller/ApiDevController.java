@@ -1,5 +1,6 @@
 package com.jmv.api_project.Controller;
 
+import com.jmv.api_project.Model.Response.MobileResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,8 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import static com.jmv.api_project.Config.ApiConfig.API_URL;
 
 @Slf4j
 @RestController
@@ -33,11 +36,9 @@ public class ApiDevController {
 
     //Info found in: https://www.geeksforgeeks.org/java/how-to-call-or-consume-external-api-in-spring-boot/
     @GetMapping("/mobilesList")
-    public List<Object> getMobiles(){
-        String url = "https://api.restful-api.dev/objects";
+    public List<MobileResponse> getMobiles(){
         RestTemplate restTemplate = new RestTemplate();
-        Object[] mobiles = restTemplate.getForObject(url, Object[].class);
-
-        return Arrays.asList(mobiles);
+        MobileResponse[] mobileResponseList = restTemplate.getForObject(API_URL, MobileResponse[].class);
+        return List.of(mobileResponseList);
     }
 }
