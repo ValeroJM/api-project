@@ -15,11 +15,8 @@ public class MobileEntity {
     private Long mobileId;
     private String name;
     private String color;
-    private String Color_2;
     private String Strap_colour;
     private String capacity;
-    private String Capacity_2;
-    private String capacityGB;
     private Double price;
     private String generation;
     private Integer year;

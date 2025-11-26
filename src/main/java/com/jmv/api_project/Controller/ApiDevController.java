@@ -35,7 +35,7 @@ public class ApiDevController {
     }
 
     //Info found in: https://www.geeksforgeeks.org/java/how-to-call-or-consume-external-api-in-spring-boot/
-    @GetMapping("/mobilesList")
+    @GetMapping("/getMobilesListFromApi")
     public List<MobileResponse> getMobiles(){
         RestTemplate restTemplate = new RestTemplate();
         MobileResponse[] mobileResponseList = restTemplate.getForObject(API_URL, MobileResponse[].class);
