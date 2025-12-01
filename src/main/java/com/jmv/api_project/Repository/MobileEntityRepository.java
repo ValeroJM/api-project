@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface MobileEntityRepository extends JpaRepository<MobileEntity, Long> {
-    Optional<MobileEntity> findByName(String name);
+    MobileEntity findBymobileID(Long id);
 }

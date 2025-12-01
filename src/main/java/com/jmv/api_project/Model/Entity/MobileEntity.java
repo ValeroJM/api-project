@@ -6,12 +6,16 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 @Entity(name = "MOBILE_INFO")
 public class MobileEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long pk;
+    private LocalDateTime date;
     private Long mobileId;
     private String name;
     private String color;
